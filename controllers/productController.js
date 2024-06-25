@@ -106,12 +106,10 @@ exports.updateProduct = async (req, res) => {
 
         const yesItem = await yes.save()
         res.json(yesItem)
+    }catch (error) {
+        console.log({message: error.message});
     }
-    res.setHeader("application/item");
-    res.json(prem)
-    catch (error) {
-        return res.json(error.details)
-    }
+    
 }
 
 
